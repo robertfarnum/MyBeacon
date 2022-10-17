@@ -14,13 +14,14 @@ import com.example.mybeacon.vm.FinderViewModel
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.altbeacon.beacon.MonitorNotifier
 
 @Composable
 fun finder(model: FinderViewModel) {
     val currentState = model.currentState.collectAsState()
 
     val state = currentState.value.state
-    var txt = if (state == 1) "Entering " else "Leaving "
+    var txt = if (state == MonitorNotifier.INSIDE) "Entered the " else "Left the "
     val regionName = if (currentState.value.region?.uniqueId != null) currentState.value.region?.uniqueId else "No Region"
 
     txt += regionName

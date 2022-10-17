@@ -12,7 +12,9 @@ import java.util.*
 class FinderViewModel(context: Context) : TextToSpeech.OnInitListener {
     // the list of regions matching the region definitions with a specific set of UUIDs which identify a region
     private val regions: List<Region> = listOf(
-        Region("Cafeteria", Identifier.parse("e2c56db5-dffb-48d2-b060-d0f5a71096e0"), null, null)
+        //Region("Cafeteria 1", Identifier.parse("e2c56db5-dffb-48d2-b060-d0f5a71096e0"), Identifier.parse("e8bf8aac-f5fc-485c-93bb-32cc041852d0"), null),
+        Region("Cafeteria", Identifier.parse("e2c56db5-dffb-48d2-b060-d0f5a71096e0"), null, null) ,
+        //Region("Cafeteria 3", Identifier.parse("e2c56db5-dffb-48d2-b060-d0f5a71096e0"), Identifier.parse("e8bf8aac-f5fc-485c-93bb-32cc041852d0"), null),
     )
 
     // The BeaconManager
@@ -68,8 +70,6 @@ class FinderViewModel(context: Context) : TextToSpeech.OnInitListener {
                 }
             }
         }
-
-
     }
 
     fun startMonitoring() {
